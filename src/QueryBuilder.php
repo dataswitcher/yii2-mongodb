@@ -232,6 +232,27 @@ class QueryBuilder extends BaseObject
     }
 
     /**
+     * Generates deleteMany command
+     * @param string $collectionName
+     * @param array $condition
+     * @param array $options
+     * @return array command document.
+     */
+    public function deleteMany($collectionName, $condition = [], $options = [])
+    {
+        $document = ['delete' => $collectionName];
+
+        if (!empty($condition)) {
+            $document['deletes'] = [[
+                'q' => (array) $this->buildCondition($condition),
+                'limit' => 0,
+            ]];
+        }
+
+        return array_merge($document, $options);
+    }
+
+    /**
      * Generates 'find and modify' command.
      * @param string $collectionName collection name
      * @param array $condition filter condition

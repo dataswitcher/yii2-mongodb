@@ -343,6 +343,18 @@ class Collection extends BaseObject
     }
 
     /**
+     * Removes data from the collection.
+     * @param array $condition description of records to remove.
+     * @param array $options list of options in format: optionName => optionValue.
+     * @return int|bool number of updated documents or whether operation was successful.
+     * @throws Exception on failure.
+     */
+    public function removeMany($condition = [], $options = [])
+    {
+        return $this->database->createCommand()->deleteMany($this->name, $condition, $options);
+    }
+
+    /**
      * Counts records in this collection.
      * @param array $condition query condition
      * @param array $options list of options in format: optionName => optionValue.

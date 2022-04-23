@@ -92,7 +92,7 @@ abstract class ActiveRecord extends BaseActiveRecord
      */
     public static function deleteAll($condition = [], $options = [])
     {
-        return static::getCollection()->remove($condition, $options);
+        return static::getCollection()->removeMany($condition, $options);
     }
 
     /**

@@ -577,6 +577,21 @@ class Command extends BaseObject
     }
 
     /**
+     * Removes documents from the collection.
+     * @param string $collectionName collection name.
+     * @param array $condition filter condition.
+     * @param array $options delete options.
+     * @return WriteResult write result.
+     */
+    public function deleteMany($collectionName, $condition, $options = [])
+    {
+        $this->document = $this->db->getQueryBuilder()->deleteMany($collectionName, $condition, $options);
+        $result = current($this->execute()->toArray());
+        return $result['n'];
+    }
+
+
+    /**
      * Performs find query.
      * @param string $collectionName collection name
      * @param array $condition filter condition
