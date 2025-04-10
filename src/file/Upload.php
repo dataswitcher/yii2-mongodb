@@ -1,8 +1,8 @@
 <?php
 /**
- * @link http://www.yiiframework.com/
+ * @link https://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
+ * @license https://www.yiiframework.com/license/
  */
 
 namespace yii\mongodb\file;
@@ -256,7 +256,7 @@ class Upload extends BaseObject
     {
         $fileDocument = [
             '_id' => $this->_documentId,
-            'uploadDate' => new UTCDateTime(round(microtime(true) * 1000)),
+            'uploadDate' => new UTCDateTime(),
         ];
         if ($this->filename === null) {
             $fileDocument['filename'] = $this->_documentId . '.dat';

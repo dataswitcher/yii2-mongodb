@@ -6,7 +6,7 @@
     <br>
 </p>
 
-This extension provides the [MongoDB](https://www.mongodb.com/) integration for the [Yii framework 2.0](http://www.yiiframework.com).
+This extension provides the [MongoDB](https://www.mongodb.com/) integration for the [Yii framework 2.0](https://www.yiiframework.com).
 
 For license information check the [LICENSE](LICENSE.md)-file.
 
@@ -20,11 +20,11 @@ Documentation is at [docs/guide/README.md](docs/guide/README.md).
 Installation
 ------------
 
-This extension requires [MongoDB PHP Extension](http://us1.php.net/manual/en/set.mongodb.php) version 1.0.0 or higher.
+This extension requires [MongoDB PHP Extension](https://www.php.net/manual/en/set.mongodb.php) version 1.20.1 or higher.
 
-This extension requires MongoDB server version 3.0 or higher.
+This extension requires MongoDB server version 4.0 or higher.
 
-The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
+The preferred way to install this extension is through [composer](https://getcomposer.org/download/).
 
 Either run
 
@@ -35,10 +35,10 @@ php composer.phar require --prefer-dist yiisoft/yii2-mongodb
 or add
 
 ```
-"yiisoft/yii2-mongodb": "~2.1.0"
+"yiisoft/yii2-mongodb": "~3.0.0"
 ```
 
-to the require section of your composer.json.
+to the `require` section of your `composer.json`.
 
 Configuration
 -------------
@@ -60,3 +60,10 @@ return [
     ],
 ];
 ```
+
+Known issues
+------------
+<ul>
+<li>yii\mongodb\Exception: no such command: 'group' with MongoDB server version 4.2 or higher.<br/>
+Starting in version 4.2, MongoDB removes the group command (deprecated since version 3.4) and its mongo shell helper db.collection.group().</li>
+</ul>
