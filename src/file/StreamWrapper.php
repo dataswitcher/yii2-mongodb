@@ -1,8 +1,8 @@
 <?php
 /**
- * @link http://www.yiiframework.com/
+ * @link https://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
+ * @license https://www.yiiframework.com/license/
  */
 
 namespace yii\mongodb\file;
@@ -45,9 +45,9 @@ use yii\mongodb\Connection;
  * $fileContent = stream_get_contents($resource);
  * ```
  *
- * @see http://php.net/manual/en/function.stream-wrapper-register.php
+ * @see https://php.net/manual/en/function.stream-wrapper-register.php
  *
- * @property array $contextOptions Context options. This property is read-only.
+ * @property-read array $contextOptions Context options.
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.1
@@ -362,7 +362,7 @@ class StreamWrapper extends BaseObject
 
         return $statistics;
     }
-    
+
     /**
      * Seeks to specific location in a stream.
      * This method is called in response to `fseek()`.
@@ -401,7 +401,7 @@ class StreamWrapper extends BaseObject
         }
         return false;
     }
-    
+
     /**
      * Retrieve the current position of a stream.
      * This method is called in response to `fseek()` to determine the current position.
